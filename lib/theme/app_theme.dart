@@ -7,7 +7,7 @@ final appTheme = ThemeData(
   primaryColorLight: ColorPallete.primaryLightColor,
   scaffoldBackgroundColor: ColorPallete.primaryColor,
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: ColorPallete.secondaryColor,
+    backgroundColor: ColorPallete.secondaryLightColor,
   ),
   appBarTheme: AppBarTheme(
     color: ColorPallete.primaryColor,

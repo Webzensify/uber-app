@@ -24,61 +24,64 @@ class Login extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.1,
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: min(MediaQuery.of(context).size.height * 0.025, 26),
-                  children: [
-                    TextFormField(
-                      style: TextStyle(
-                        color: ColorPallete.lightBlack,
-                      ),
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        hintText: 'Email',
-                        prefixIcon: Icon(
-                          Icons.email_outlined,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    spacing:
+                        min(MediaQuery.of(context).size.height * 0.025, 26),
+                    children: [
+                      TextFormField(
+                        style: TextStyle(
+                          color: ColorPallete.lightBlack,
                         ),
-                      ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your email';
-                        }
-                        if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                          return 'Please enter a valid email';
-                        }
-                        return null;
-                      },
-                    ),
-                    TextFormField(
-                      style: TextStyle(
-                        color: ColorPallete.lightBlack,
-                      ),
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        hintText: 'Password',
-                        prefixIcon: Icon(
-                          Icons.lock,
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          hintText: 'Email',
+                          prefixIcon: Icon(
+                            Icons.email_outlined,
+                          ),
                         ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your email';
+                          }
+                          if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                            return 'Please enter a valid email';
+                          }
+                          return null;
+                        },
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your password';
-                        }
-                        if (value.length < 8) {
-                          return 'Password must be at least 8 characters long';
-                        }
-                        return null;
-                      },
-                    ),
-                    AuthButton(
-                      name: 'Login',
-                      onPressed: () {
-                        if (_formKey.currentState?.validate() ?? false) {
-                          Navigator.pushNamed(context, '#');
-                        }
-                      },
-                    ),
-                  ],
+                      TextFormField(
+                        style: TextStyle(
+                          color: ColorPallete.lightBlack,
+                        ),
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          hintText: 'Password',
+                          prefixIcon: Icon(
+                            Icons.lock,
+                          ),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password';
+                          }
+                          if (value.length < 8) {
+                            return 'Password must be at least 8 characters long';
+                          }
+                          return null;
+                        },
+                      ),
+                      AuthButton(
+                        name: 'Login',
+                        onPressed: () {
+                          if (_formKey.currentState?.validate() ?? false) {
+                            Navigator.pushNamed(context, '#');
+                          }
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

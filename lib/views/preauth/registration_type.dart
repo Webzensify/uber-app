@@ -32,7 +32,7 @@ class RegistrationType extends StatelessWidget {
               title: 'User',
               imageUrl: 'assets/images/human.png',
               onTap: () {
-                Navigator.pushNamed(context, '/register', arguments: 0);
+                Navigator.pushNamed(context, '/intro', arguments: 0);
               },
             ),
             SizedBox(
@@ -42,7 +42,7 @@ class RegistrationType extends StatelessWidget {
               title: 'Driver',
               imageUrl: 'assets/images/carDriver.png',
               onTap: () {
-                Navigator.pushNamed(context, '/register', arguments: 1);
+                Navigator.pushNamed(context, '/intro', arguments: 1);
               },
             ),
             const Spacer(
