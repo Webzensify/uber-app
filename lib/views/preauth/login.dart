@@ -76,7 +76,7 @@ class Login extends StatelessWidget {
                         name: 'Login',
                         onPressed: () {
                           if (_formKey.currentState?.validate() ?? false) {
-                            Navigator.pushNamed(context, '#');
+                            Navigator.pushReplacementNamed(context, '/home');
                           }
                         },
                       ),

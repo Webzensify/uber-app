@@ -181,7 +181,12 @@ class Register extends StatelessWidget {
                         name: 'Signup',
                         onPressed: () {
                           if (_formKey.currentState?.validate() ?? false) {
-                            Navigator.pushNamed(context, '#');
+                            if (userType == 0) {
+                              Navigator.of(context)
+                                  .pushReplacementNamed("/home");
+                            } else {
+                              Navigator.of(context).pushReplacementNamed("#");
+                            }
                           }
                         },
                       ),

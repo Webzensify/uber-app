@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travelo/splash_screen.dart';
+import 'package:travelo/views/afterauth/home.dart';
 import 'package:travelo/views/preauth/car_info_form.dart';
 import 'package:travelo/views/preauth/forgot_password.dart';
 import 'package:travelo/views/preauth/intro_page.dart';
@@ -31,6 +32,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ForgotPassword());
       case '/carInfoForm':
         return MaterialPageRoute(builder: (_) => CarInfoForm());
+      case '/home':
+        return MaterialPageRoute(builder: (_) => Home());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
